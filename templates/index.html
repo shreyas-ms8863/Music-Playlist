@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Playlist Manager</title>
+</head>
+<body>
+    <h1>🎵 Music Playlist Manager</h1>
+
+    <form method="POST">
+        <input type="text" name="song" placeholder="Enter song name" required>
+        <button type="submit">Add Song</button>
+    </form>
+
+    <h2>Now Playing:</h2>
+    <p><b>{{ current_song }}</b></p>
+
+    <a href="/prev"><button>⏮ Previous</button></a>
+    <a href="/next"><button>⏭ Next</button></a>
+</body>
+</html>
