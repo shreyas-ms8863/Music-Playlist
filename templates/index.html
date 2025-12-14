@@ -1,20 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Music Playlist Manager</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #1db954, #191414);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            background: #121212;
+            padding: 30px 40px;
+            border-radius: 12px;
+            width: 380px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #1db954;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            outline: none;
+        }
+
+        button {
+            background: #1db954;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            color: black;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1ed760;
+        }
+
+        .now-playing {
+            margin-bottom: 20px;
+        }
+
+        .song {
+            background: #1f1f1f;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 18px;
+            margin-top: 8px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .controls a button {
+            width: 45%;
+        }
+
+        footer {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #aaa;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>🎵 Music Playlist Manager</h1>
+
+<div class="container">
+    <h1>🎵 Music Playlist</h1>
 
     <form method="POST">
         <input type="text" name="song" placeholder="Enter song name" required>
-        <button type="submit">Add Song</button>
+        <button type="submit">Add</button>
     </form>
 
-    <h2>Now Playing:</h2>
-    <p><b>{{ current_song }}</b></p>
+    <div class="now-playing">
+        <h3>Now Playing</h3>
+        <div class="song">
+            {{ current_song }}
+        </div>
+    </div>
 
-    <a href="/prev"><button>⏮ Previous</button></a>
-    <a href="/next"><button>⏭ Next</button></a>
+    <div class="controls">
+        <a href="/prev"><button>⏮ Previous</button></a>
+        <a href="/next"><button>⏭ Next</button></a>
+    </div>
+
+    <footer>
+        Doubly Linked List | Flask Web App
+    </footer>
+</div>
+
 </body>
 </html>
